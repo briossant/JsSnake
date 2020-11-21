@@ -120,9 +120,9 @@ function game() {
         cmpt++;
         if (botplay===true){
             if(score<bot1_lim){
-                dir=bot1_BFS(grid,hx,hy,miamcoo[0],miamcoo[1])
+                dir[0]=bot1_BFS(grid,hx,hy,miamcoo[0],miamcoo[1])
             }else{
-                dir=bot2_DFS(grid,hx,hy,qco[q-1][0],qco[q-1][1])
+                dir[0]=bot2_DFS(grid,hx,hy,qco[q-1][0],qco[q-1][1])
             }
         }
         if(dir[0]==='N'){
