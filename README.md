@@ -1,6 +1,5 @@
--|----------------------------------------------|-    
-Javascript Snake ready to use :
+A simple javascript snake.
 
-put the files in the same directory,     
-and open index.html with your browser     
--|----------------------------------------------|-
+To use simply open index.html with your browser.
+
+working on : adding an AI
