@@ -8,10 +8,14 @@
 </head>
 <body>
 <h2>Snake</h2>
-<button onclick="game()">go</button><br>
-<p id="deb"></p><br>
+<button onclick="game()">go</button>
+<button id="bot_button" onclick="activate_bots()">Bot : OFF</button>
+<label>Speed : <input id="speed_input" type="number" value="100" step="1"></label>
+<p id="deb">-</p><br>
 <canvas class="snake" id="can"></canvas>
 
-<script src="snake.js"></script>
+<script type="text/javascript" src="snake.js"></script>
+<script type="text/javascript" src="bots.js"></script>
+
 </body>
 </html>
