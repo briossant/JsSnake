@@ -18,7 +18,7 @@ let deb=document.getElementById('deb');
 
 document.addEventListener('keydown',mov);
 
-let dir='E';
+let dir=['E'];
 
 function draw(x,y) {
     ctx.fillStyle = '#fbfbff';
@@ -55,7 +55,7 @@ function game() {
 
     let cmpt=0;
     let miamcoo=[];
-    dir='E';
+    dir=['E'];
 
     for(let i=0;i<q;i++){
         grid[hx-i][hy]+=i+1;
@@ -90,34 +90,37 @@ function game() {
 
     let boucle=()=>{
         cmpt++;
-        if(dir==='N'){
+        if(dir[0]==='N'){
             hy--;
             if(hy<0||grid[hx][hy]===1){
                 alive=false;
             }else {
                 mod()
             }
-        }else if(dir==='S'){
+        }else if(dir[0]==='S'){
             hy++;
             if(hy>=rheight/fact||grid[hx][hy]===1){
                 alive=false;
             }else {
                 mod()
             }
-        }else if(dir==='W'){
+        }else if(dir[0]==='W'){
             hx--;
             if(hx<0||grid[hx][hy]===1){
                 alive=false;
             }else {
                 mod()
             }
-        }else if(dir==='E'){
+        }else if(dir[0]==='E'){
             hx++;
             if(hx>=rwidth/fact||grid[hx][hy]===1){
                 alive=false;
             }else {
                 mod()
             }
+        }
+        if(dir.length>1){
+            dir.shift()
         }
         timeout=false;
         if(alive===false){
@@ -133,18 +136,18 @@ function game() {
 }
 
 function mov(cle) {
-    if(timeout===false && botplay===false) {
-        if (cle.code === 'ArrowUp' && dir !== 'S') {
-            dir = 'N';
+    if(botplay===false) {
+        if (cle.code === 'ArrowUp' && dir[dir.length-1]!=='S') {
+            dir.push('N');
             timeout = true
-        } else if (cle.code === 'ArrowDown' && dir !== 'N') {
-            dir = 'S';
+        } else if (cle.code === 'ArrowDown' && dir[dir.length-1]!=='N') {
+            dir.push('S');
             timeout = true
-        } else if (cle.code === 'ArrowLeft' && dir !== 'E') {
-            dir = 'W';
+        } else if (cle.code === 'ArrowLeft' && dir[dir.length-1]!=='E') {
+            dir.push('W');
             timeout = true
-        } else if (cle.code === 'ArrowRight' && dir !== 'W') {
-            dir = 'E';
+        } else if (cle.code === 'ArrowRight' && dir[dir.length-1]!=='W') {
+            dir.push('E');
             timeout = true
         }
     }
