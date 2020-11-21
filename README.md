@@ -1,5 +1,5 @@
-A simple javascript snake.
+A simple javascript snake with an AI
 
 To use simply open index.html with your browser.
 
-working on : adding an AI
+The bot is base on the BFS algorithm.
