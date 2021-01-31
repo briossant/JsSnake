@@ -1,4 +1,4 @@
-A simple javascript snake with an AI
+A javascript snake with an AI
 
 To use simply open index.html with your browser.
 
