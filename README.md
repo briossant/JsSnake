@@ -4,4 +4,4 @@ To use simply open index.html with your browser.
 
 The bot is base on the BFS algorithm.
 
-Exemple on : https://www.mapland.fr/bri/Games/snake.html
+Exemple on : https://briossant.com/Games/snake.html
